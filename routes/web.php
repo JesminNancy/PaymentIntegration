@@ -1,18 +1,14 @@
 <?php
 
+use App\Http\Controllers\PaypalController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*-----Paypal------*/
+
+Route::post('paypal/payment',[PaypalController::class,'payment'])->name('paypal');
+Route::get('paypal/success',[PaypalController::class,'paypal_success'])->name('paypal_success');
+Route::get('paypal/cancel',[PaypalController::class,'paypal_cancel'])->name('paypal_cancel');
