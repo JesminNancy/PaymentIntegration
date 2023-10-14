@@ -18,13 +18,13 @@
         </form>
     </div>
 
-    {{-- <div style="margin-bottom:10px;">
+    <div style="margin-bottom:10px;">
         <form action="{{ route('stripe') }}" method="post">
         @csrf
         <input type="hidden" name="price" value="10">
         <button type="submit">Pay With Stripe</button>
         </form>
-    </div> --}}
+    </div>
 
 </body>
 </html>
